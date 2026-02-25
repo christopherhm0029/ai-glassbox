@@ -72,7 +72,7 @@ export default function LlmDeepDive({ anim, llmSub }: LlmDeepDiveProps) {
                 "Network: private endpoint / VNET integrated",
                 "Data encrypted at rest (AES-256) & in transit",
                 "Microsoft has NO access to your prompts",
-                "Zero data retention — deleted after response",
+                "Up to 30 days by default · 0 days with approved Zero Data Retention",
               ]}
               color={C.cyan[500]}
             />

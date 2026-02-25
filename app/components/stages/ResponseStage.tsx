@@ -100,7 +100,7 @@ export function DataLifecycleStage({ anim }: StageProps) {
 
           {/* Zero data retention caveat */}
           <p className="text-[10px] mt-4 mx-auto max-w-[540px] italic leading-relaxed" style={{ color: C.slate[400] }}>
-            Note: Zero Data Retention requires opting out of Azure OpenAI abuse monitoring. Contact your Microsoft representative to enable this for your deployment.
+            Note: Zero Data Retention requires opting out of abuse monitoring via the Modified Abuse Monitoring program, available to Enterprise Agreement (EA) and Microsoft Customer Agreement (MCA) customers. By default, Azure OpenAI may retain data for up to 30 days. Contact your Microsoft representative to enable ZDR for your deployment.
           </p>
         </div>
       </Card>
@@ -177,7 +177,7 @@ function CleanupAndControlGrid() {
   const cleanupRows = [
     { what: "Prompt input",      when: "Immediately after response" },
     { what: "GPU memory",        when: "Immediately — cleared for next request" },
-    { what: "Azure OpenAI logs", when: "0 days when Zero Data Retention is enabled" },
+    { what: "Azure OpenAI logs", when: "Up to 30 days by default · 0 days with approved Zero Data Retention" },
     { what: "Inference cache",   when: "Not cached (ephemeral only)" },
   ];
 
@@ -240,7 +240,7 @@ function TrustBanner() {
     { Icon: IconSearch, t: "Fully Transparent", d: "7 visible stages" },
     { Icon: IconLock,   t: "Data Sovereign",    d: "Never leaves your tenant" },
     { Icon: IconCheck,  t: "Fully Traceable",   d: "Every claim cited" },
-    { Icon: IconTrash,  t: "Zero Retention",    d: "Cleaned after response" },
+    { Icon: IconTrash,  t: "Zero Retention",    d: "0 days with approved ZDR · 30 days default" },
   ];
 
   return (
