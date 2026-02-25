@@ -20,7 +20,7 @@ AI Glass Box is an interactive, step-by-step visualization of the complete Retri
 
 ## Screenshot / Demo
 
-> Screenshot or animated GIF coming soon.
+![AI Glass Box — pipeline overview](https://github.com/user-attachments/assets/b56d1e64-67a8-4088-ba7b-acbe83aef8f6)
 
 Live demo: [https://christopherhm0029.github.io/ai-glassbox](https://christopherhm0029.github.io/ai-glassbox)
 
