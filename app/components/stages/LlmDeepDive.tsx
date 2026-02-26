@@ -14,7 +14,7 @@
 
 import { C } from "../tokens";
 import type { StageProps } from "../tokens";
-import { SectionLabel, Badge, Stat, Card, InfraBox, TwoCol, TokenBubble, HeatCell, ProbBar } from "../ui";
+import { SectionLabel, Badge, Stat, Card, InfraBox, TwoCol, TokenBubble, HeatCell, ProbBar, BusinessSummaryBox } from "../ui";
 
 interface LlmDeepDiveProps extends StageProps {
   /** Current LLM substep counter (0–6) */
@@ -96,6 +96,11 @@ export default function LlmDeepDive({ anim, llmSub }: LlmDeepDiveProps) {
         <Stat label="Output" value="156" unit=" tok" />
         <Stat label="Tok/sec" value="111" />
       </div>
+
+      <BusinessSummaryBox
+        summary="The AI processes your question and your document sections through hundreds of mathematical layers in about 1.4 seconds. At each step it refines its understanding, identifies what is most relevant, and builds the answer word by word — always guided by the data in your documents. It is not guessing or searching the internet."
+        takeaway="The AI writes its answer one word at a time, each choice backed by the content in your documents. Every key figure — like '28%' — comes directly from your data with 96%+ confidence."
+      />
     </div>
   );
 }

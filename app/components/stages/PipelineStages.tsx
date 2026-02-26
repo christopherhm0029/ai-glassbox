@@ -14,7 +14,7 @@
 
 import { C } from "../tokens";
 import type { StageProps, Chunk, RetrievalResult } from "../tokens";
-import { SectionLabel, Badge, Stat, Card, InfraBox, TwoCol } from "../ui";
+import { SectionLabel, Badge, Stat, Card, InfraBox, TwoCol, BusinessSummaryBox } from "../ui";
 
 /* ═══════════════════════════════════════════════
    Stage 1 — User Question
@@ -64,6 +64,10 @@ export function UserQuestionStage({ anim }: StageProps) {
                 ]}
               />
             }
+          />
+          <BusinessSummaryBox
+            summary="A team member types a question into your AI assistant — just like sending a chat message. The system starts working immediately to find the right answer from your own company documents. No data is sent anywhere outside your organization at this point."
+            takeaway="Your staff interact with AI the same way they message a colleague. Everything stays inside your company from the very first click."
           />
         </div>
       </Card>
@@ -143,6 +147,10 @@ export function IngestionStage({ anim, chunks }: StageProps & { chunks: Chunk[] 
             <Stat label="Overlap" value="50" unit=" tok" />
             <Stat label="Time" value="0.3" unit="s" />
           </div>
+          <BusinessSummaryBox
+            summary="Before the AI can answer questions, your documents are uploaded and automatically divided into small, searchable sections — similar to building an index at the back of a textbook. This happens entirely on your own company's servers. No document is ever sent outside your organization."
+            takeaway="Your company documents are processed and stored on infrastructure you own and control. The AI provider never receives your raw files."
+          />
         </div>
       </Card>
     </div>
@@ -243,6 +251,10 @@ export function EmbeddingStage({ anim }: StageProps) {
               />
             }
           />
+          <BusinessSummaryBox
+            summary="To make documents searchable by meaning rather than just keywords, the system converts each section into a unique numerical fingerprint. This allows the AI to understand that 'revenue increase' and 'income growth' refer to the same concept. The fingerprints are stored in your own database — the AI provider retains nothing."
+            takeaway="The AI understands the meaning of your documents, not just the words. This is what makes it far more accurate than a traditional keyword search."
+          />
         </div>
       </Card>
     </div>
@@ -316,6 +328,10 @@ export function RetrievalStage({
                 color={C.amber[500]}
               />
             }
+          />
+          <BusinessSummaryBox
+            summary="When a question is asked, the system searches your entire document library in milliseconds and pinpoints the three most relevant sections — like a skilled researcher going straight to the right pages in a report. Only those specific sections are used to generate the answer."
+            takeaway="The AI only reads the most relevant parts of your documents to answer each question — not the entire library. This keeps answers focused and accurate."
           />
         </div>
       </Card>
@@ -395,6 +411,10 @@ export function PromptAssemblyStage({
             <Stat label="Model" value="GPT-4o" />
             <Stat label="Temp" value="0.1" />
           </div>
+          <BusinessSummaryBox
+            summary="The AI is given a carefully structured brief: strict instructions to only use provided information, the relevant document sections, and the user's original question. It is programmed not to invent answers — it must only use your company's data."
+            takeaway="The AI is explicitly instructed to answer only from your documents and to cite its sources. It cannot make things up or bring in outside information."
+          />
         </div>
       </Card>
     </div>

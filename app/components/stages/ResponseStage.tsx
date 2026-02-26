@@ -10,7 +10,7 @@
 
 import { C } from "../tokens";
 import type { StageProps } from "../tokens";
-import { SectionLabel, Stat, Card, Typing } from "../ui";
+import { SectionLabel, Stat, Card, Typing, BusinessSummaryBox } from "../ui";
 import { IconSearch, IconLock, IconCheck, IconTrash } from "../Icons";
 
 /* ═══════════════════════════════════════════════
@@ -74,6 +74,10 @@ export function ResponseStage({ v, anim, response }: StageProps & { response: st
             <Stat label="Sources" value="3" />
             <Stat label="Total" value="2.1" unit="s" />
           </div>
+          <BusinessSummaryBox
+            summary="The AI delivers a clear, well-structured answer in plain language, with every claim linked to the exact page in your document it came from. Decision makers can verify any statement instantly — there is no guesswork or unverifiable content."
+            takeaway="Every answer comes with a verifiable source. Your team and auditors can trace any claim directly back to the original document page."
+          />
         </div>
       </Card>
     </div>
@@ -102,6 +106,11 @@ export function DataLifecycleStage({ anim }: StageProps) {
           <p className="text-[10px] mt-4 mx-auto max-w-[540px] italic leading-relaxed" style={{ color: C.slate[400] }}>
             Note: Zero Data Retention requires opting out of abuse monitoring via the Modified Abuse Monitoring program, available to Enterprise Agreement (EA) and Microsoft Customer Agreement (MCA) customers. By default, Azure OpenAI may retain data for up to 30 days. Contact your Microsoft representative to enable ZDR for your deployment.
           </p>
+
+          <BusinessSummaryBox
+            summary="Once the AI has answered your question, your data is cleaned up. The question and the document sections used are not stored by the AI provider. Your original documents, conversation history, and audit logs remain exclusively in your own systems — you decide how long they are kept and who can access them."
+            takeaway="Your company owns and controls all data at every stage. The AI provider holds nothing after the answer is delivered. You set the rules for what is kept and for how long."
+          />
         </div>
       </Card>
 
