@@ -187,6 +187,62 @@ export function TwoCol({
   );
 }
 
+/**
+ * Plain-language callout for decision makers and non-technical stakeholders.
+ * Appears at the bottom of each pipeline stage card.
+ */
+export function BusinessSummaryBox({
+  summary,
+  takeaway,
+}: {
+  /** 1–2 sentence plain-language explanation of what is happening */
+  summary: string;
+  /** Short key takeaway — the single most important point for a decision maker */
+  takeaway: string;
+}) {
+  return (
+    <div
+      className="mt-5 rounded-xl border overflow-hidden"
+      style={{ borderColor: `${C.amber[400]}50` }}
+    >
+      {/* Header bar */}
+      <div
+        className="px-4 py-2.5 flex items-center gap-2 border-b"
+        style={{ background: C.amber[50], borderColor: `${C.amber[400]}40` }}
+      >
+        <span className="text-sm">💼</span>
+        <span
+          className="text-[10px] font-bold uppercase tracking-[1.5px]"
+          style={{ color: C.amber[700] }}
+        >
+          What this means for your organization
+        </span>
+      </div>
+
+      {/* Body */}
+      <div
+        className="px-4 py-3.5 flex flex-col gap-2"
+        style={{ background: `${C.amber[50]}80` }}
+      >
+        <p className="text-[12px] leading-relaxed m-0" style={{ color: C.slate[500] }}>
+          {summary}
+        </p>
+
+        {/* Key takeaway pill */}
+        <div
+          className="flex items-start gap-2 px-3 py-2 rounded-lg border"
+          style={{ background: C.amber[100], borderColor: `${C.amber[400]}50` }}
+        >
+          <span className="text-[11px] shrink-0 mt-[1px]">⭐</span>
+          <span className="text-[11px] font-semibold leading-relaxed" style={{ color: C.amber[700] }}>
+            {takeaway}
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ─────────────────────────────────────────────
    Animation & Visualisation Components
    ───────────────────────────────────────────── */
